@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +31,7 @@
                         <constraint firstAttribute="height" constant="40" id="Emo-XB-0co"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
                 </textField>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="10B-Mv-yd0">
                     <rect key="frame" x="0.0" y="119" width="393" height="733"/>
@@ -39,33 +40,35 @@
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-ZK-LOm">
-                    <rect key="frame" x="136.66666666666666" y="792" width="119.99999999999997" height="26"/>
+                    <rect key="frame" x="121.66666666666669" y="792" width="150" height="26"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-PS-cnE">
-                            <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="26"/>
+                            <rect key="frame" x="0.0" y="0.0" width="74.333333333333329" height="26"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Sort">
+                            <state key="normal" title="⇵ Sort">
                                 <color key="titleColor" name="orangered"/>
                             </state>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XI-CS-33G">
-                            <rect key="frame" x="59.333333333333343" y="4" width="1" height="18"/>
+                            <rect key="frame" x="74.333333333333329" y="4" width="1" height="18"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="1" id="bJk-e9-HbE"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vI-ie-HwC">
-                            <rect key="frame" x="60.333333333333343" y="0.0" width="59.666666666666657" height="26"/>
+                            <rect key="frame" x="75.333333333333314" y="0.0" width="74.666666666666686" height="26"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                            <color key="tintColor" name="orangered"/>
+                            <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Filter">
-                                <color key="titleColor" name="orangered"/>
+                                <imageReference key="image" image="line.3.horizontal.decrease.circle" catalog="system" symbolScale="small"/>
                             </state>
                         </button>
                     </subviews>
@@ -78,7 +81,7 @@
                         <constraint firstAttribute="height" constant="26" id="KyK-Ud-HA8"/>
                         <constraint firstItem="2XI-CS-33G" firstAttribute="leading" secondItem="Vm4-PS-cnE" secondAttribute="trailing" id="L6W-Sr-dbc"/>
                         <constraint firstItem="Vm4-PS-cnE" firstAttribute="leading" secondItem="Xii-ZK-LOm" secondAttribute="leading" id="OKC-21-Kfz"/>
-                        <constraint firstAttribute="width" constant="120" id="PIl-Ln-afn"/>
+                        <constraint firstAttribute="width" constant="150" id="PIl-Ln-afn"/>
                         <constraint firstItem="5vI-ie-HwC" firstAttribute="top" secondItem="Xii-ZK-LOm" secondAttribute="top" id="TpM-fA-6BO"/>
                         <constraint firstItem="Vm4-PS-cnE" firstAttribute="top" secondItem="Xii-ZK-LOm" secondAttribute="top" id="aif-vv-Iv0"/>
                         <constraint firstItem="5vI-ie-HwC" firstAttribute="leading" secondItem="2XI-CS-33G" secondAttribute="trailing" id="anU-6t-Syo"/>
@@ -104,6 +107,7 @@
         </view>
     </objects>
     <resources>
+        <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <namedColor name="orangered">
             <color red="0.94901960784313721" green="0.44705882352941179" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

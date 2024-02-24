@@ -24,7 +24,9 @@ extension LoanListVM {
 // MARK: - INIT
 class LoanListVM {
     
-    /// - Note: Parameter
+    /// - Note: Variable
+    var sort = ""
+    var isDesc = false
     
     /// - Note: Result
     let loans = BehaviorRelay<[Loan]>(value: [])
@@ -55,5 +57,43 @@ extension LoanListVM{
         }
         self.loading.accept((.loan, true))
         task.resume()
+    }
+    
+    func sortLoanList(selection: String) {
+        var loans = self.loans.value
+        self.sort = selection
+        switch selection {
+        case "Name":
+            if self.isDesc {
+                loans = loans.sorted{ $0.borrower?.name ?? "" > $1.borrower?.name ?? "" }
+            }
+            else {
+                loans = loans.sorted{ $0.borrower?.name ?? "" < $1.borrower?.name ?? "" }
+            }
+        case "Term":
+            if self.isDesc {
+                loans = loans.sorted{ $0.term ?? 0 > $1.term ?? 0 }
+            }
+            else {
+                loans = loans.sorted{ $0.term ?? 0 < $1.term ?? 0 }
+            }
+        case "Purpose":
+            if self.isDesc {
+                loans = loans.sorted{ $0.purpose?.rawValue ?? "" > $1.purpose?.rawValue ?? "" }
+            }
+            else {
+                loans = loans.sorted{ $0.purpose?.rawValue ?? "" < $1.purpose?.rawValue ?? "" }
+            }
+        case "Risk":
+            if self.isDesc {
+                loans = loans.sorted{ $0.riskRating?.rawValue ?? "" > $1.riskRating?.rawValue ?? "" }
+            }
+            else {
+                loans = loans.sorted{ $0.riskRating?.rawValue ?? "" < $1.riskRating?.rawValue ?? "" }
+            }
+        default:
+            break
+        }
+        self.loans.accept(loans)
     }
 }

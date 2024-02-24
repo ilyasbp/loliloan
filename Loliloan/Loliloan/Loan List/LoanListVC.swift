@@ -21,6 +21,7 @@ class LoanListVC: UIViewController {
     @IBOutlet weak var b_sort: UIButton!
     @IBOutlet weak var b_filter: UIButton!
     // SUB: Variable
+    let sortVC = SortVC.create()
     
     static func create() -> LoanListVC {
         let vc = LoanListVC(nibName: String(describing: self), bundle: nil)
@@ -47,6 +48,8 @@ extension LoanListVC{
         
         v_sortfilter.layer.cornerRadius = 6
         v_sortfilter.clipsToBounds = true
+        
+        sortVC.modalPresentationStyle = .overFullScreen
     }
     
     func setupBinding(){
@@ -72,8 +75,21 @@ extension LoanListVC{
         cv_loanList.rx.setDelegate(self).disposed(by: disposeBag)
         
         // SORT
+        sortVC.publishSelection.bind { [weak self] selection in
+            guard let strself = self else { return }
+            strself.vm.isDesc = strself.vm.sort == selection && !strself.vm.isDesc
+            if strself.vm.isDesc {
+                strself.b_sort.setTitle("↓ " + selection, for: .normal)
+            }
+            else {
+                strself.b_sort.setTitle("↑ " + selection, for: .normal)
+            }
+            strself.vm.sortLoanList(selection: selection)
+        }.disposed(by: disposeBag)
+        
         b_sort.rx.tap.bind { [weak self] in
-            
+            guard let strself = self else { return }
+            strself.present(strself.sortVC, animated: true)
         }.disposed(by: disposeBag)
         
         // FILTER
@@ -89,7 +105,7 @@ extension LoanListVC{
 extension LoanListVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 40, height: 130)
+        return CGSize(width: collectionView.frame.width - 40, height: 126)
     }
     
 }

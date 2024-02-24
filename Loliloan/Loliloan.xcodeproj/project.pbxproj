@@ -20,6 +20,7 @@
 		E9D56B3C2B8A015400ABD9CA /* SortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B3A2B8A015400ABD9CA /* SortVC.swift */; };
 		E9D56B3D2B8A015400ABD9CA /* SortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B3B2B8A015400ABD9CA /* SortVC.xib */; };
 		E9D56B3F2B8A02EB00ABD9CA /* SortVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */; };
+		E9D56B422B8A200E00ABD9CA /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B412B8A200E00ABD9CA /* Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E9D56B3A2B8A015400ABD9CA /* SortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVC.swift; sourceTree = "<group>"; };
 		E9D56B3B2B8A015400ABD9CA /* SortVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortVC.xib; sourceTree = "<group>"; };
 		E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVM.swift; sourceTree = "<group>"; };
+		E9D56B412B8A200E00ABD9CA /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		E9D42BDF2B89DA84004FA978 /* Loliloan */ = {
 			isa = PBXGroup;
 			children = (
+				E9D56B402B8A1FFE00ABD9CA /* Extension */,
 				E9D56B392B8A013000ABD9CA /* Filter */,
 				E9D56B382B8A012500ABD9CA /* Sort */,
 				E9D56B332B89EBCB00ABD9CA /* Cell */,
@@ -147,6 +150,14 @@
 			children = (
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		E9D56B402B8A1FFE00ABD9CA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E9D56B412B8A200E00ABD9CA /* Shadow.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 				E9D42BE12B89DA84004FA978 /* AppDelegate.swift in Sources */,
 				E9D56B3F2B8A02EB00ABD9CA /* SortVM.swift in Sources */,
 				E9D42BFA2B89DB20004FA978 /* LoanListVM.swift in Sources */,
+				E9D56B422B8A200E00ABD9CA /* Shadow.swift in Sources */,
 				E9D56B3C2B8A015400ABD9CA /* SortVC.swift in Sources */,
 				E9D56B322B89E32100ABD9CA /* Loan.swift in Sources */,
 			);
