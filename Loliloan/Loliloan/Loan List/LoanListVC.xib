@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoanListVC" customModule="Loliloan" customModuleProvider="target">
             <connections>
+                <outlet property="b_filter" destination="5vI-ie-HwC" id="UPh-Cl-t5g"/>
+                <outlet property="b_sort" destination="Vm4-PS-cnE" id="qrU-am-by3"/>
+                <outlet property="cv_loanList" destination="10B-Mv-yd0" id="Sno-GE-zGL"/>
+                <outlet property="tf_search" destination="0Hz-rv-9nz" id="8bo-Qi-5Vb"/>
+                <outlet property="v_sortfilter" destination="Xii-ZK-LOm" id="ZIv-fi-1us"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,22 +24,94 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coba" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WW2-uk-JTN">
-                    <rect key="frame" x="217" y="408" width="41" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Loan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-rv-9nz">
+                    <rect key="frame" x="20" y="69" width="353" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Emo-XB-0co"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="10B-Mv-yd0">
+                    <rect key="frame" x="0.0" y="119" width="393" height="733"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="14" minimumInteritemSpacing="0.0" id="Bct-ZI-Af6">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xii-ZK-LOm">
+                    <rect key="frame" x="136.66666666666666" y="792" width="119.99999999999997" height="26"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-PS-cnE">
+                            <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="26"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Sort">
+                                <color key="titleColor" name="orangered"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XI-CS-33G">
+                            <rect key="frame" x="59.333333333333343" y="4" width="1" height="18"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="bJk-e9-HbE"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vI-ie-HwC">
+                            <rect key="frame" x="60.333333333333343" y="0.0" width="59.666666666666657" height="26"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Filter">
+                                <color key="titleColor" name="orangered"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Vm4-PS-cnE" secondAttribute="bottom" id="0Qo-dk-tUH"/>
+                        <constraint firstAttribute="trailing" secondItem="5vI-ie-HwC" secondAttribute="trailing" id="3CM-UW-ru8"/>
+                        <constraint firstItem="2XI-CS-33G" firstAttribute="centerX" secondItem="Xii-ZK-LOm" secondAttribute="centerX" id="5mT-dB-vmD"/>
+                        <constraint firstAttribute="bottom" secondItem="5vI-ie-HwC" secondAttribute="bottom" id="CiI-gW-Vfx"/>
+                        <constraint firstAttribute="height" constant="26" id="KyK-Ud-HA8"/>
+                        <constraint firstItem="2XI-CS-33G" firstAttribute="leading" secondItem="Vm4-PS-cnE" secondAttribute="trailing" id="L6W-Sr-dbc"/>
+                        <constraint firstItem="Vm4-PS-cnE" firstAttribute="leading" secondItem="Xii-ZK-LOm" secondAttribute="leading" id="OKC-21-Kfz"/>
+                        <constraint firstAttribute="width" constant="120" id="PIl-Ln-afn"/>
+                        <constraint firstItem="5vI-ie-HwC" firstAttribute="top" secondItem="Xii-ZK-LOm" secondAttribute="top" id="TpM-fA-6BO"/>
+                        <constraint firstItem="Vm4-PS-cnE" firstAttribute="top" secondItem="Xii-ZK-LOm" secondAttribute="top" id="aif-vv-Iv0"/>
+                        <constraint firstItem="5vI-ie-HwC" firstAttribute="leading" secondItem="2XI-CS-33G" secondAttribute="trailing" id="anU-6t-Syo"/>
+                        <constraint firstAttribute="bottom" secondItem="2XI-CS-33G" secondAttribute="bottom" constant="4" id="dcV-zb-QxO"/>
+                        <constraint firstItem="2XI-CS-33G" firstAttribute="top" secondItem="Xii-ZK-LOm" secondAttribute="top" constant="4" id="hGF-tt-RCB"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="-39" y="20"/>
+            <constraints>
+                <constraint firstItem="0Hz-rv-9nz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="7kC-we-Xf4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Hz-rv-9nz" secondAttribute="trailing" constant="20" id="AWQ-ke-Uum"/>
+                <constraint firstItem="10B-Mv-yd0" firstAttribute="top" secondItem="0Hz-rv-9nz" secondAttribute="bottom" constant="10" id="Dfw-p9-0lF"/>
+                <constraint firstItem="10B-Mv-yd0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YkY-Mc-7ti"/>
+                <constraint firstItem="0Hz-rv-9nz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eM6-NO-CsA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xii-ZK-LOm" secondAttribute="bottom" id="gm8-vo-dPj"/>
+                <constraint firstAttribute="bottom" secondItem="10B-Mv-yd0" secondAttribute="bottom" id="kck-SQ-iXH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10B-Mv-yd0" secondAttribute="trailing" id="loc-H5-WUB"/>
+                <constraint firstItem="Xii-ZK-LOm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vyg-0h-az6"/>
+            </constraints>
+            <point key="canvasLocation" x="-40.458015267175568" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="orangered">
+            <color red="0.94901960784313721" green="0.44705882352941179" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
