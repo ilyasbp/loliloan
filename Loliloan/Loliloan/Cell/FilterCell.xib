@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filter-cell" id="gTV-IL-0wX" customClass="FilterCell" customModule="Loliloan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="267" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="267" height="44"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peF-15-nX6">
+                        <rect key="frame" x="0.0" y="0.0" width="267" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" name="orangered"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="peF-15-nX6" secondAttribute="trailing" id="Ujb-FR-eGS"/>
+                <constraint firstAttribute="bottom" secondItem="peF-15-nX6" secondAttribute="bottom" id="aLf-f7-H8e"/>
+                <constraint firstItem="peF-15-nX6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cpK-JD-BeO"/>
+                <constraint firstItem="peF-15-nX6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pVq-7n-I0z"/>
+            </constraints>
+            <size key="customSize" width="267" height="44"/>
+            <connections>
+                <outlet property="lb_filter" destination="peF-15-nX6" id="uf0-1b-mv7"/>
+            </connections>
+            <point key="canvasLocation" x="141.22137404580153" y="17.605633802816904"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="orangered">
+            <color red="0.94901960784313721" green="0.44705882352941179" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

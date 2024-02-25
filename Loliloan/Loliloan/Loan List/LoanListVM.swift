@@ -25,8 +25,12 @@ extension LoanListVM {
 class LoanListVM {
     
     /// - Note: Variable
-    var sort = ""
+    var keywords = ""
+    var sorting = ""
     var isDesc = false
+    var purposeFilter: [String] = []
+    var termFilter: [String] = []
+    var riskFilter: [String] = []
     
     /// - Note: Result
     let loans = BehaviorRelay<[Loan]>(value: [])
@@ -42,27 +46,44 @@ extension LoanListVM{
     func fetchLoanList(){
         guard let url = URL(string: "https://raw.githubusercontent.com/andreascandle/p2p_json_test/main/api/json/loans.json") else { return }
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let data = data, error == nil else {
+            guard let strself = self, let data = data, error == nil else {
                 self?.error.accept((.loan, error ?? NSError(domain: "", code: 0)))
                 return
             }
             do {
-                let loans = try JSONDecoder().decode([Loan].self, from: data)
-                self?.loading.accept((.loan, false))
-                self?.loans.accept(loans)
+                var loans = try JSONDecoder().decode([Loan].self, from: data)
+                strself.loading.accept((.loan, false))
+                if !strself.keywords.isEmpty {
+                    loans = loans.filter{
+                        ($0.borrower?.name ?? "").lowercased().contains(strself.keywords) ||
+                        ($0.purpose?.rawValue ?? "").lowercased().contains(strself.keywords) ||
+                        String($0.term ?? 0).lowercased().contains(strself.keywords) ||
+                        ($0.riskRating?.rawValue ?? "").lowercased().contains(strself.keywords)
+                    }
+                }
+                if !strself.purposeFilter.isEmpty {
+                    loans = loans.filter{ strself.purposeFilter.contains($0.purpose?.rawValue ?? "") }
+                }
+                if !strself.termFilter.isEmpty {
+                    loans = loans.filter{ strself.termFilter.contains(String($0.term ?? 0)) }
+                }
+                if !strself.riskFilter.isEmpty {
+                    loans = loans.filter{ strself.riskFilter.contains($0.riskRating?.rawValue ?? "") }
+                }
+                strself.loans.accept(loans)
+                strself.sortLoanList()
             }
             catch {
-                self?.error.accept((.loan, error))
+                strself.error.accept((.loan, error))
             }
         }
         self.loading.accept((.loan, true))
         task.resume()
     }
     
-    func sortLoanList(selection: String) {
+    func sortLoanList() {
         var loans = self.loans.value
-        self.sort = selection
-        switch selection {
+        switch sorting {
         case "Name":
             if self.isDesc {
                 loans = loans.sorted{ $0.borrower?.name ?? "" > $1.borrower?.name ?? "" }

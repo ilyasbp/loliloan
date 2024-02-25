@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoanListVC" customModule="Loliloan" customModuleProvider="target">
             <connections>
+                <outlet property="aiv_loading" destination="v11-s0-P6Y" id="FHw-Bb-W1N"/>
                 <outlet property="b_filter" destination="5vI-ie-HwC" id="UPh-Cl-t5g"/>
                 <outlet property="b_sort" destination="Vm4-PS-cnE" id="qrU-am-by3"/>
                 <outlet property="cv_loanList" destination="10B-Mv-yd0" id="Sno-GE-zGL"/>
@@ -25,7 +26,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Loan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-rv-9nz">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Loan" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Hz-rv-9nz">
                     <rect key="frame" x="20" y="69" width="353" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Emo-XB-0co"/>
@@ -89,6 +90,9 @@
                         <constraint firstItem="2XI-CS-33G" firstAttribute="top" secondItem="Xii-ZK-LOm" secondAttribute="top" constant="4" id="hGF-tt-RCB"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="v11-s0-P6Y">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,8 +101,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Hz-rv-9nz" secondAttribute="trailing" constant="20" id="AWQ-ke-Uum"/>
                 <constraint firstItem="10B-Mv-yd0" firstAttribute="top" secondItem="0Hz-rv-9nz" secondAttribute="bottom" constant="10" id="Dfw-p9-0lF"/>
                 <constraint firstItem="10B-Mv-yd0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YkY-Mc-7ti"/>
+                <constraint firstItem="v11-s0-P6Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dXF-p2-7HJ"/>
                 <constraint firstItem="0Hz-rv-9nz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="eM6-NO-CsA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xii-ZK-LOm" secondAttribute="bottom" id="gm8-vo-dPj"/>
+                <constraint firstItem="v11-s0-P6Y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jrM-iH-fKS"/>
                 <constraint firstAttribute="bottom" secondItem="10B-Mv-yd0" secondAttribute="bottom" id="kck-SQ-iXH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10B-Mv-yd0" secondAttribute="trailing" id="loc-H5-WUB"/>
                 <constraint firstItem="Xii-ZK-LOm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vyg-0h-az6"/>

@@ -15,18 +15,16 @@ class SortVC: UIViewController {
     let disposeBag = DisposeBag()
     // SUB: UI
     @IBOutlet weak var v_background: UIView!
+    @IBOutlet weak var b_close: UIButton!
     @IBOutlet weak var tv_sort: UITableView!
+    @IBOutlet weak var us_asc: UISwitch!
     // SUB: Variable
-    let sortByList = BehaviorRelay<[String]>(value: ["Name", "Term", "Purpose", "Risk"])
-    let publishSelection = PublishSubject<String>()
+    let sortingList = BehaviorRelay<[String]>(value: ["Name", "Term", "Purpose", "Risk"])
+    let publishSelection = PublishSubject<(String, Bool)>()
     
     static func create() -> SortVC {
         let vc = SortVC(nibName: String(describing: self), bundle: nil)
         return vc
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.dismiss(animated: true)
     }
 }
  
@@ -50,15 +48,20 @@ extension SortVC {
     }
     
     func setupBinding(){
-        // FILTER LIST
+        b_close.rx.tap.bind { [weak self] in
+            guard let strself = self else { return }
+            strself.dismiss(animated: true)
+        }.disposed(by: disposeBag)
+        
+        // SORT LIST
         tv_sort.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        sortByList.bind(to: self.tv_sort.rx.items(cellIdentifier: "Cell")) { index, data, cell in
+        sortingList.bind(to: self.tv_sort.rx.items(cellIdentifier: "Cell")) { index, data, cell in
             cell.textLabel?.text = data
         }.disposed(by: disposeBag)
         
         tv_sort.rx.itemSelected.bind { indexPath in
-            self.publishSelection.onNext(self.sortByList.value[indexPath.row])
+            self.publishSelection.onNext((self.sortingList.value[indexPath.row], self.us_asc.isOn))
             self.dismiss(animated: true)
         }.disposed(by: disposeBag)
     }

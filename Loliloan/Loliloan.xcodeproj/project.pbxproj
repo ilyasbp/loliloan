@@ -21,6 +21,12 @@
 		E9D56B3D2B8A015400ABD9CA /* SortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B3B2B8A015400ABD9CA /* SortVC.xib */; };
 		E9D56B3F2B8A02EB00ABD9CA /* SortVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */; };
 		E9D56B422B8A200E00ABD9CA /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B412B8A200E00ABD9CA /* Shadow.swift */; };
+		E9D56B452B8A27CD00ABD9CA /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B432B8A27CD00ABD9CA /* FilterVC.swift */; };
+		E9D56B462B8A27CD00ABD9CA /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B442B8A27CD00ABD9CA /* FilterVC.xib */; };
+		E9D56B4C2B8A2CE100ABD9CA /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B4A2B8A2CE100ABD9CA /* FilterCell.swift */; };
+		E9D56B4D2B8A2CE100ABD9CA /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B4B2B8A2CE100ABD9CA /* FilterCell.xib */; };
+		E9D56B4F2B8A3D6800ABD9CA /* LoanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B4E2B8A3D6800ABD9CA /* LoanFilter.swift */; };
+		E9D56B512B8B184500ABD9CA /* FilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B502B8B184500ABD9CA /* FilterVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		E9D56B3B2B8A015400ABD9CA /* SortVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortVC.xib; sourceTree = "<group>"; };
 		E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVM.swift; sourceTree = "<group>"; };
 		E9D56B412B8A200E00ABD9CA /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		E9D56B432B8A27CD00ABD9CA /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		E9D56B442B8A27CD00ABD9CA /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
+		E9D56B4A2B8A2CE100ABD9CA /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		E9D56B4B2B8A2CE100ABD9CA /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		E9D56B4E2B8A3D6800ABD9CA /* LoanFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanFilter.swift; sourceTree = "<group>"; };
+		E9D56B502B8B184500ABD9CA /* FilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				E9D56B312B89E32100ABD9CA /* Loan.swift */,
+				E9D56B4E2B8A3D6800ABD9CA /* LoanFilter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +144,8 @@
 			children = (
 				E9D56B342B89EC0E00ABD9CA /* LoanCell.swift */,
 				E9D56B352B89EC0E00ABD9CA /* LoanCell.xib */,
+				E9D56B4A2B8A2CE100ABD9CA /* FilterCell.swift */,
+				E9D56B4B2B8A2CE100ABD9CA /* FilterCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -148,6 +163,9 @@
 		E9D56B392B8A013000ABD9CA /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				E9D56B432B8A27CD00ABD9CA /* FilterVC.swift */,
+				E9D56B502B8B184500ABD9CA /* FilterVM.swift */,
+				E9D56B442B8A27CD00ABD9CA /* FilterVC.xib */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -220,11 +238,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9D56B462B8A27CD00ABD9CA /* FilterVC.xib in Resources */,
 				E9D42BED2B89DA85004FA978 /* LaunchScreen.storyboard in Resources */,
 				E9D42BEA2B89DA85004FA978 /* Assets.xcassets in Resources */,
 				E9D42BF82B89DB06004FA978 /* LoanListVC.xib in Resources */,
 				E9D56B3D2B8A015400ABD9CA /* SortVC.xib in Resources */,
 				E9D56B372B89EC0E00ABD9CA /* LoanCell.xib in Resources */,
+				E9D56B4D2B8A2CE100ABD9CA /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +299,11 @@
 			files = (
 				E9D56B362B89EC0E00ABD9CA /* LoanCell.swift in Sources */,
 				E9D42BF72B89DB06004FA978 /* LoanListVC.swift in Sources */,
+				E9D56B4F2B8A3D6800ABD9CA /* LoanFilter.swift in Sources */,
+				E9D56B4C2B8A2CE100ABD9CA /* FilterCell.swift in Sources */,
 				E9D42BE12B89DA84004FA978 /* AppDelegate.swift in Sources */,
+				E9D56B452B8A27CD00ABD9CA /* FilterVC.swift in Sources */,
+				E9D56B512B8B184500ABD9CA /* FilterVM.swift in Sources */,
 				E9D56B3F2B8A02EB00ABD9CA /* SortVM.swift in Sources */,
 				E9D42BFA2B89DB20004FA978 /* LoanListVM.swift in Sources */,
 				E9D56B422B8A200E00ABD9CA /* Shadow.swift in Sources */,

@@ -20,8 +20,10 @@ class LoanListVC: UIViewController {
     @IBOutlet weak var v_sortfilter: UIView!
     @IBOutlet weak var b_sort: UIButton!
     @IBOutlet weak var b_filter: UIButton!
+    @IBOutlet weak var aiv_loading: UIActivityIndicatorView!
     // SUB: Variable
     let sortVC = SortVC.create()
+    let filterVC = FilterVC.create()
     
     static func create() -> LoanListVC {
         let vc = LoanListVC(nibName: String(describing: self), bundle: nil)
@@ -48,8 +50,7 @@ extension LoanListVC{
         
         v_sortfilter.layer.cornerRadius = 6
         v_sortfilter.clipsToBounds = true
-        
-        sortVC.modalPresentationStyle = .overFullScreen
+        v_sortfilter.addShadow()
     }
     
     func setupBinding(){
@@ -74,30 +75,70 @@ extension LoanListVC{
         
         cv_loanList.rx.setDelegate(self).disposed(by: disposeBag)
         
-        // SORT
-        sortVC.publishSelection.bind { [weak self] selection in
+        // LOADING
+        self.vm.loading.skip(1).bind { [weak self] (at, isLoading) in
             guard let strself = self else { return }
-            strself.vm.isDesc = strself.vm.sort == selection && !strself.vm.isDesc
-            if strself.vm.isDesc {
-                strself.b_sort.setTitle("↓ " + selection, for: .normal)
+            DispatchQueue.main.async {
+                if isLoading {
+                    strself.aiv_loading.startAnimating()
+                } else {
+                    strself.aiv_loading.stopAnimating()
+                }
             }
-            else {
-                strself.b_sort.setTitle("↑ " + selection, for: .normal)
-            }
-            strself.vm.sortLoanList(selection: selection)
         }.disposed(by: disposeBag)
         
+        // ERROR
+        self.vm.error.skip(1).bind { [weak self] _ in
+            guard let strself = self else { return }
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Error", message: "Periksa kembali internet anda dan ulangi sekali lagi", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default){ _ in
+                    strself.vm.fetchLoanList()
+                })
+                strself.present(alert, animated: true,completion: nil)
+            }
+        }.disposed(by: disposeBag)
+        
+        // SORT
         b_sort.rx.tap.bind { [weak self] in
             guard let strself = self else { return }
             strself.present(strself.sortVC, animated: true)
         }.disposed(by: disposeBag)
         
+        sortVC.publishSelection.bind { [weak self] (sorting, isAsc) in
+            guard let strself = self else { return }
+            strself.vm.sorting = sorting
+            strself.vm.isDesc = !isAsc
+            if !isAsc {
+                strself.b_sort.setTitle("↓ " + sorting, for: .normal)
+            }
+            else {
+                strself.b_sort.setTitle("↑ " + sorting, for: .normal)
+            }
+            strself.vm.sortLoanList()
+        }.disposed(by: disposeBag)
+        
         // FILTER
         b_filter.rx.tap.bind { [weak self] in
-            
+            guard let strself = self else { return }
+            strself.present(strself.filterVC, animated: true)
+        }.disposed(by: disposeBag)
+        
+        filterVC.vm.publishFilter.bind { [weak self] (purpose, term, risk) in
+            guard let strself = self else { return }
+            strself.vm.purposeFilter = purpose
+            strself.vm.termFilter = term
+            strself.vm.riskFilter = risk
+            strself.vm.fetchLoanList()
         }.disposed(by: disposeBag)
         
         // SEARCH
+        tf_search.rx.controlEvent(.primaryActionTriggered).bind { [weak self] in
+            guard let strself = self, let text = strself.tf_search.text else { return }
+            strself.vm.keywords = text.lowercased()
+            strself.vm.fetchLoanList()
+            strself.view.endEditing(true)
+        }.disposed(by: disposeBag)
     }
 }
 
