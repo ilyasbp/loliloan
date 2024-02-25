@@ -19,7 +19,7 @@ class SortVC: UIViewController {
     @IBOutlet weak var tv_sort: UITableView!
     @IBOutlet weak var us_asc: UISwitch!
     // SUB: Variable
-    let sortingList = BehaviorRelay<[String]>(value: ["Name", "Term", "Purpose", "Risk"])
+    let sortingList = BehaviorRelay<[String]>(value: ["Name", "Amount", "Term", "Purpose", "Risk"])
     let publishSelection = PublishSubject<(String, Bool)>()
     
     static func create() -> SortVC {
@@ -49,7 +49,10 @@ extension SortVC {
     
     func setupBinding(){
         b_close.rx.tap.bind { [weak self] in
-            guard let strself = self, let index = strself.tv_sort.indexPathForSelectedRow else { return }
+            guard let strself = self, let index = strself.tv_sort.indexPathForSelectedRow else {
+                self?.dismiss(animated: true)
+                return
+            }
             strself.publishSelection.onNext((strself.sortingList.value[index.row], strself.us_asc.isOn))
             strself.dismiss(animated: true)
         }.disposed(by: disposeBag)

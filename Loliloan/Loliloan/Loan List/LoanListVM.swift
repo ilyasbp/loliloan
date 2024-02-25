@@ -92,6 +92,13 @@ extension LoanListVM{
             else {
                 loans = loans.sorted{ $0.borrower?.name ?? "" < $1.borrower?.name ?? "" }
             }
+        case "Amount":
+            if self.isDesc {
+                loans = loans.sorted{ $0.amount ?? 0 > $1.amount ?? 0 }
+            }
+            else {
+                loans = loans.sorted{ $0.amount ?? 0 < $1.amount ?? 0 }
+            }
         case "Term":
             if self.isDesc {
                 loans = loans.sorted{ $0.term ?? 0 > $1.term ?? 0 }
