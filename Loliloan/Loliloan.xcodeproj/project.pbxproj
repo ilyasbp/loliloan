@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A8F032D771FAE09DE7AEE10C /* Pods_Loliloan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A15375887E64F263C2BDFE63 /* Pods_Loliloan.framework */; };
+		E9BFB2362B8B890B00122003 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFB2342B8B890B00122003 /* DocumentCell.swift */; };
+		E9BFB2372B8B890B00122003 /* DocumentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFB2352B8B890B00122003 /* DocumentCell.xib */; };
+		E9BFB23B2B8B978D00122003 /* DocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFB2392B8B978D00122003 /* DocumentVC.swift */; };
+		E9BFB23C2B8B978D00122003 /* DocumentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFB23A2B8B978D00122003 /* DocumentVC.xib */; };
+		E9BFB23E2B8B9B3A00122003 /* DocumentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFB23D2B8B9B3A00122003 /* DocumentVM.swift */; };
+		E9BFB2402B8B9D0B00122003 /* ExtUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFB23F2B8B9D0B00122003 /* ExtUIImageView.swift */; };
 		E9D42BE12B89DA84004FA978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D42BE02B89DA84004FA978 /* AppDelegate.swift */; };
 		E9D42BEA2B89DA85004FA978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D42BE92B89DA85004FA978 /* Assets.xcassets */; };
 		E9D42BED2B89DA85004FA978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D42BEB2B89DA85004FA978 /* LaunchScreen.storyboard */; };
@@ -20,19 +26,31 @@
 		E9D56B3C2B8A015400ABD9CA /* SortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B3A2B8A015400ABD9CA /* SortVC.swift */; };
 		E9D56B3D2B8A015400ABD9CA /* SortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B3B2B8A015400ABD9CA /* SortVC.xib */; };
 		E9D56B3F2B8A02EB00ABD9CA /* SortVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */; };
-		E9D56B422B8A200E00ABD9CA /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B412B8A200E00ABD9CA /* Shadow.swift */; };
+		E9D56B422B8A200E00ABD9CA /* ExtUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B412B8A200E00ABD9CA /* ExtUIView.swift */; };
 		E9D56B452B8A27CD00ABD9CA /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B432B8A27CD00ABD9CA /* FilterVC.swift */; };
 		E9D56B462B8A27CD00ABD9CA /* FilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B442B8A27CD00ABD9CA /* FilterVC.xib */; };
 		E9D56B4C2B8A2CE100ABD9CA /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B4A2B8A2CE100ABD9CA /* FilterCell.swift */; };
 		E9D56B4D2B8A2CE100ABD9CA /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B4B2B8A2CE100ABD9CA /* FilterCell.xib */; };
 		E9D56B4F2B8A3D6800ABD9CA /* LoanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B4E2B8A3D6800ABD9CA /* LoanFilter.swift */; };
 		E9D56B512B8B184500ABD9CA /* FilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B502B8B184500ABD9CA /* FilterVM.swift */; };
+		E9D56B552B8B510600ABD9CA /* LoanDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B532B8B510600ABD9CA /* LoanDetailVC.swift */; };
+		E9D56B562B8B510600ABD9CA /* LoanDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B542B8B510600ABD9CA /* LoanDetailVC.xib */; };
+		E9D56B582B8B5F6000ABD9CA /* LoanDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B572B8B5F6000ABD9CA /* LoanDetailVM.swift */; };
+		E9D56B5C2B8B7E2800ABD9CA /* MoneyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B5B2B8B7E2800ABD9CA /* MoneyUtils.swift */; };
+		E9D56B5F2B8B806E00ABD9CA /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D56B5D2B8B806E00ABD9CA /* PaymentCell.swift */; };
+		E9D56B602B8B806E00ABD9CA /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D56B5E2B8B806E00ABD9CA /* PaymentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18850AE1D5296071EFEAFF58 /* Pods-Loliloan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loliloan.release.xcconfig"; path = "Target Support Files/Pods-Loliloan/Pods-Loliloan.release.xcconfig"; sourceTree = "<group>"; };
 		5C575675DDDF48D8EDB9BA1E /* Pods-Loliloan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loliloan.debug.xcconfig"; path = "Target Support Files/Pods-Loliloan/Pods-Loliloan.debug.xcconfig"; sourceTree = "<group>"; };
 		A15375887E64F263C2BDFE63 /* Pods_Loliloan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loliloan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9BFB2342B8B890B00122003 /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
+		E9BFB2352B8B890B00122003 /* DocumentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentCell.xib; sourceTree = "<group>"; };
+		E9BFB2392B8B978D00122003 /* DocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVC.swift; sourceTree = "<group>"; };
+		E9BFB23A2B8B978D00122003 /* DocumentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentVC.xib; sourceTree = "<group>"; };
+		E9BFB23D2B8B9B3A00122003 /* DocumentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVM.swift; sourceTree = "<group>"; };
+		E9BFB23F2B8B9D0B00122003 /* ExtUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtUIImageView.swift; sourceTree = "<group>"; };
 		E9D42BDD2B89DA84004FA978 /* Loliloan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Loliloan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D42BE02B89DA84004FA978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9D42BE92B89DA85004FA978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,13 +65,19 @@
 		E9D56B3A2B8A015400ABD9CA /* SortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVC.swift; sourceTree = "<group>"; };
 		E9D56B3B2B8A015400ABD9CA /* SortVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortVC.xib; sourceTree = "<group>"; };
 		E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVM.swift; sourceTree = "<group>"; };
-		E9D56B412B8A200E00ABD9CA /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		E9D56B412B8A200E00ABD9CA /* ExtUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtUIView.swift; sourceTree = "<group>"; };
 		E9D56B432B8A27CD00ABD9CA /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		E9D56B442B8A27CD00ABD9CA /* FilterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterVC.xib; sourceTree = "<group>"; };
 		E9D56B4A2B8A2CE100ABD9CA /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		E9D56B4B2B8A2CE100ABD9CA /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		E9D56B4E2B8A3D6800ABD9CA /* LoanFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanFilter.swift; sourceTree = "<group>"; };
 		E9D56B502B8B184500ABD9CA /* FilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVM.swift; sourceTree = "<group>"; };
+		E9D56B532B8B510600ABD9CA /* LoanDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailVC.swift; sourceTree = "<group>"; };
+		E9D56B542B8B510600ABD9CA /* LoanDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoanDetailVC.xib; sourceTree = "<group>"; };
+		E9D56B572B8B5F6000ABD9CA /* LoanDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanDetailVM.swift; sourceTree = "<group>"; };
+		E9D56B5B2B8B7E2800ABD9CA /* MoneyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyUtils.swift; sourceTree = "<group>"; };
+		E9D56B5D2B8B806E00ABD9CA /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		E9D56B5E2B8B806E00ABD9CA /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E9BFB2382B8B95F000122003 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				E9BFB2392B8B978D00122003 /* DocumentVC.swift */,
+				E9BFB23A2B8B978D00122003 /* DocumentVC.xib */,
+				E9BFB23D2B8B9B3A00122003 /* DocumentVM.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
 		E9D42BD42B89DA84004FA978 = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +140,19 @@
 		E9D42BDF2B89DA84004FA978 /* Loliloan */ = {
 			isa = PBXGroup;
 			children = (
-				E9D56B402B8A1FFE00ABD9CA /* Extension */,
-				E9D56B392B8A013000ABD9CA /* Filter */,
-				E9D56B382B8A012500ABD9CA /* Sort */,
-				E9D56B332B89EBCB00ABD9CA /* Cell */,
-				E9D56B302B89E30A00ABD9CA /* Model */,
-				E9D42BF42B89DADB004FA978 /* Loan List */,
+				E9D42BEE2B89DA85004FA978 /* Info.plist */,
 				E9D42BE02B89DA84004FA978 /* AppDelegate.swift */,
 				E9D42BE92B89DA85004FA978 /* Assets.xcassets */,
 				E9D42BEB2B89DA85004FA978 /* LaunchScreen.storyboard */,
-				E9D42BEE2B89DA85004FA978 /* Info.plist */,
+				E9D56B332B89EBCB00ABD9CA /* Cell */,
+				E9BFB2382B8B95F000122003 /* Document */,
+				E9D56B402B8A1FFE00ABD9CA /* Extension */,
+				E9D56B392B8A013000ABD9CA /* Filter */,
+				E9D56B522B8B4D3000ABD9CA /* Loan Detail */,
+				E9D42BF42B89DADB004FA978 /* Loan List */,
+				E9D56B302B89E30A00ABD9CA /* Model */,
+				E9D56B382B8A012500ABD9CA /* Sort */,
+				E9D56B5A2B8B7E1700ABD9CA /* Utils */,
 			);
 			path = Loliloan;
 			sourceTree = "<group>";
@@ -142,10 +179,14 @@
 		E9D56B332B89EBCB00ABD9CA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				E9D56B342B89EC0E00ABD9CA /* LoanCell.swift */,
-				E9D56B352B89EC0E00ABD9CA /* LoanCell.xib */,
 				E9D56B4A2B8A2CE100ABD9CA /* FilterCell.swift */,
 				E9D56B4B2B8A2CE100ABD9CA /* FilterCell.xib */,
+				E9D56B342B89EC0E00ABD9CA /* LoanCell.swift */,
+				E9D56B352B89EC0E00ABD9CA /* LoanCell.xib */,
+				E9D56B5D2B8B806E00ABD9CA /* PaymentCell.swift */,
+				E9D56B5E2B8B806E00ABD9CA /* PaymentCell.xib */,
+				E9BFB2342B8B890B00122003 /* DocumentCell.swift */,
+				E9BFB2352B8B890B00122003 /* DocumentCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -154,8 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				E9D56B3A2B8A015400ABD9CA /* SortVC.swift */,
-				E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */,
 				E9D56B3B2B8A015400ABD9CA /* SortVC.xib */,
+				E9D56B3E2B8A02EB00ABD9CA /* SortVM.swift */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -164,8 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				E9D56B432B8A27CD00ABD9CA /* FilterVC.swift */,
-				E9D56B502B8B184500ABD9CA /* FilterVM.swift */,
 				E9D56B442B8A27CD00ABD9CA /* FilterVC.xib */,
+				E9D56B502B8B184500ABD9CA /* FilterVM.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -173,9 +214,28 @@
 		E9D56B402B8A1FFE00ABD9CA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E9D56B412B8A200E00ABD9CA /* Shadow.swift */,
+				E9D56B412B8A200E00ABD9CA /* ExtUIView.swift */,
+				E9BFB23F2B8B9D0B00122003 /* ExtUIImageView.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E9D56B522B8B4D3000ABD9CA /* Loan Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E9D56B532B8B510600ABD9CA /* LoanDetailVC.swift */,
+				E9D56B542B8B510600ABD9CA /* LoanDetailVC.xib */,
+				E9D56B572B8B5F6000ABD9CA /* LoanDetailVM.swift */,
+			);
+			path = "Loan Detail";
+			sourceTree = "<group>";
+		};
+		E9D56B5A2B8B7E1700ABD9CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E9D56B5B2B8B7E2800ABD9CA /* MoneyUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +303,12 @@
 				E9D42BEA2B89DA85004FA978 /* Assets.xcassets in Resources */,
 				E9D42BF82B89DB06004FA978 /* LoanListVC.xib in Resources */,
 				E9D56B3D2B8A015400ABD9CA /* SortVC.xib in Resources */,
+				E9D56B602B8B806E00ABD9CA /* PaymentCell.xib in Resources */,
+				E9BFB2372B8B890B00122003 /* DocumentCell.xib in Resources */,
 				E9D56B372B89EC0E00ABD9CA /* LoanCell.xib in Resources */,
 				E9D56B4D2B8A2CE100ABD9CA /* FilterCell.xib in Resources */,
+				E9D56B562B8B510600ABD9CA /* LoanDetailVC.xib in Resources */,
+				E9BFB23C2B8B978D00122003 /* DocumentVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,13 +366,21 @@
 				E9D56B4F2B8A3D6800ABD9CA /* LoanFilter.swift in Sources */,
 				E9D56B4C2B8A2CE100ABD9CA /* FilterCell.swift in Sources */,
 				E9D42BE12B89DA84004FA978 /* AppDelegate.swift in Sources */,
+				E9D56B582B8B5F6000ABD9CA /* LoanDetailVM.swift in Sources */,
+				E9D56B5C2B8B7E2800ABD9CA /* MoneyUtils.swift in Sources */,
 				E9D56B452B8A27CD00ABD9CA /* FilterVC.swift in Sources */,
 				E9D56B512B8B184500ABD9CA /* FilterVM.swift in Sources */,
+				E9D56B552B8B510600ABD9CA /* LoanDetailVC.swift in Sources */,
+				E9BFB23E2B8B9B3A00122003 /* DocumentVM.swift in Sources */,
+				E9D56B5F2B8B806E00ABD9CA /* PaymentCell.swift in Sources */,
+				E9BFB2402B8B9D0B00122003 /* ExtUIImageView.swift in Sources */,
 				E9D56B3F2B8A02EB00ABD9CA /* SortVM.swift in Sources */,
 				E9D42BFA2B89DB20004FA978 /* LoanListVM.swift in Sources */,
-				E9D56B422B8A200E00ABD9CA /* Shadow.swift in Sources */,
+				E9BFB2362B8B890B00122003 /* DocumentCell.swift in Sources */,
+				E9D56B422B8A200E00ABD9CA /* ExtUIView.swift in Sources */,
 				E9D56B3C2B8A015400ABD9CA /* SortVC.swift in Sources */,
 				E9D56B322B89E32100ABD9CA /* Loan.swift in Sources */,
+				E9BFB23B2B8B978D00122003 /* DocumentVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

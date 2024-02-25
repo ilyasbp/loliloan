@@ -59,7 +59,7 @@ extension LoanListVC{
         
         vm.loans.bind(to: cv_loanList.rx.items(cellIdentifier: LoanCell.identifier, cellType: LoanCell.self)) { (row, data, cell) in
             cell.lb_name.text = data.borrower?.name
-            cell.lb_amount.text = "Rp. \(data.amount ?? 0)"
+            cell.lb_amount.text = MoneyUtils.toRupiah(data.amount ?? 0)
             cell.lb_purpose.text = data.purpose?.rawValue
             cell.lb_term.text = "\(data.term ?? 0) months"
             cell.lb_risk.text = data.riskRating?.rawValue
@@ -68,8 +68,8 @@ extension LoanListVC{
         
         cv_loanList.rx.modelSelected(Loan.self).bind { loan in
             if let nc = self.navigationController {
-//                let vc = ChatAsterbotVC.create(percakapanId: chat.percakapanId ?? 0)
-//                nc.pushViewController(vc, animated: true)
+                let vc = LoanDetailVC.create(loan: loan)
+                nc.pushViewController(vc, animated: true)
             }
         }.disposed(by: disposeBag)
         

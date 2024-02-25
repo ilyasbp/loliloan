@@ -49,7 +49,8 @@ extension SortVC {
     
     func setupBinding(){
         b_close.rx.tap.bind { [weak self] in
-            guard let strself = self else { return }
+            guard let strself = self, let index = strself.tv_sort.indexPathForSelectedRow else { return }
+            strself.publishSelection.onNext((strself.sortingList.value[index.row], strself.us_asc.isOn))
             strself.dismiss(animated: true)
         }.disposed(by: disposeBag)
         

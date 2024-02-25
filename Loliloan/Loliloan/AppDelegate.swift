@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         let nc = UINavigationController(rootViewController: LoanListVC())
+        nc.navigationBar.tintColor = .orangered
         window.rootViewController = nc
         window.makeKeyAndVisible()
         

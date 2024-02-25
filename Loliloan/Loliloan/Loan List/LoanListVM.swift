@@ -56,6 +56,7 @@ extension LoanListVM{
                 if !strself.keywords.isEmpty {
                     loans = loans.filter{
                         ($0.borrower?.name ?? "").lowercased().contains(strself.keywords) ||
+                        String($0.amount ?? 0).lowercased().contains(strself.keywords) ||
                         ($0.purpose?.rawValue ?? "").lowercased().contains(strself.keywords) ||
                         String($0.term ?? 0).lowercased().contains(strself.keywords) ||
                         ($0.riskRating?.rawValue ?? "").lowercased().contains(strself.keywords)

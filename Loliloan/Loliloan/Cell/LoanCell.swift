@@ -15,6 +15,7 @@ class LoanCell: UICollectionViewCell {
     @IBOutlet weak var lb_amount: UILabel!
     @IBOutlet weak var lb_purpose: UILabel!
     @IBOutlet weak var lb_term: UILabel!
+    @IBOutlet weak var v_risk: UIView!
     @IBOutlet weak var lb_risk: UILabel!
     @IBOutlet weak var lb_interest: UILabel!
     
@@ -22,6 +23,10 @@ class LoanCell: UICollectionViewCell {
         super.awakeFromNib()
         layer.cornerRadius = 6
         addShadow()
+        
+        v_risk.layer.cornerRadius = v_risk.frame.width / 2
+        v_risk.layer.masksToBounds = true
+        v_risk.backgroundColor = .white.withAlphaComponent(0.3)
     }
 
 }

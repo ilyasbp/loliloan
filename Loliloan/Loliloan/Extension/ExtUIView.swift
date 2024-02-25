@@ -1,5 +1,5 @@
 //
-//  Shadow.swift
+//  ExtUIView.swift
 //  Loliloan
 //
 //  Created by Ilyas Bintang Prayogi on 24/02/24.
@@ -8,6 +8,11 @@
 import UIKit
 
 extension UIView {
+    func roundCorner(){
+        layer.cornerRadius = 6
+        layer.masksToBounds = true
+    }
+    
     func addShadow(){
         layer.masksToBounds = false
         layer.shadowColor = UIColor.black.cgColor

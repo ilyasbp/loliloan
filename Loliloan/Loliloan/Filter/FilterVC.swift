@@ -95,7 +95,7 @@ extension FilterVC {
         
         cv_term.rx.setDelegate(self).disposed(by: disposeBag)
         
-        // PURPOSE LIST
+        // RISK LIST
         cv_risk.register(UINib(nibName: String(describing: FilterCell.self), bundle: nil), forCellWithReuseIdentifier: FilterCell.identifier)
         
         vm.riskList.bind(to: cv_risk.rx.items(cellIdentifier: FilterCell.identifier, cellType: FilterCell.self)) { (row, data, cell) in
@@ -114,7 +114,7 @@ extension FilterVC {
         cv_risk.rx.setDelegate(self).disposed(by: disposeBag)
         
         // APPLY
-        self.vm.filterCount.bind { [weak self] counter in
+        self.vm.filterCount.skip(1).bind { [weak self] counter in
             guard let strself = self else { return }
             strself.b_apply.setTitle("APPLY (\(counter))", for: .normal)
             strself.b_apply.isHidden = false
